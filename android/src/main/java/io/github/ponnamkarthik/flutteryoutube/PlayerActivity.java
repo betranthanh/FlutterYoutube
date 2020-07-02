@@ -34,6 +34,9 @@ public class PlayerActivity extends YouTubeBaseActivity implements YouTubePlayer
     protected void onResume() {
         super.onResume();
         if (count > 0) {
+            Intent intent = new Intent();
+            intent.putExtra("done", 0);
+            setResult(RESULT_OK, intent);
             finish();
         }
         count++;
