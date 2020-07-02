@@ -29,6 +29,15 @@ public class PlayerActivity extends YouTubeBaseActivity implements YouTubePlayer
     private int appBarColor;
     private int backgroundColor;
 
+    int count = 0;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (count > 0) {
+            finish();
+        }
+        count++;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
