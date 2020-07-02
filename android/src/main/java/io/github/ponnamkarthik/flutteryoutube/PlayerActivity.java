@@ -99,6 +99,12 @@ public class PlayerActivity extends YouTubeBaseActivity implements YouTubePlayer
                 @Override
                 public void onFullscreen(boolean b) {
                     isFullScreen = b;
+                    if (!isFullScreen) {
+                        Intent intent = new Intent();
+                        intent.putExtra("done", 0);
+                        setResult(RESULT_OK, intent);
+                        finish();
+                    }
                 }
             });
 
