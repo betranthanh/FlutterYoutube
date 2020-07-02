@@ -29,18 +29,31 @@ public class PlayerActivity extends YouTubeBaseActivity implements YouTubePlayer
     private int appBarColor;
     private int backgroundColor;
 
-    int count = 0;
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (count > 0) {
-            Intent intent = new Intent();
-            intent.putExtra("done", 0);
-            setResult(RESULT_OK, intent);
-            finish();
-        }
-        count++;
-    }
+//    int count = 0;
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        if (count > 0) {
+//            Intent intent = new Intent();
+//            intent.putExtra("done", 0);
+//            setResult(RESULT_OK, intent);
+//            finish();
+//        }
+//        count++;
+//    }
+
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//
+//        if(newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+//            Log.e("On Config Change","LANDSCAPE");
+//        }
+//        else{
+//            Log.e("On Config Change","PORTRAIT");
+//        }
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +81,7 @@ public class PlayerActivity extends YouTubeBaseActivity implements YouTubePlayer
 
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubeView.initialize(API_KEY, this);
+
     }
 
     private void setupActionBarColor(ActionBar actionBar) {
